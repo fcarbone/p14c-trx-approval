@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/default}">
+
+<div id="page" layout:fragment="content">
+
+	<!-- Call to Action -->
+	<section class="call-to-action text-white text-center">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-9 mx-auto">
+					<h1 class="mb-4">Home</h1>
+				</div>
+				<div class="col-md-10 col-lg-8 col-xl-7 mx-auto"></div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Icons Grid -->
+	<section class="features-icons bg-light text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+						<div class="features-icons-icon d-flex">
+							<i class="icon-list m-auto text-primary"></i>
+						</div>
+						<h4>
+							<a class="nav-link" href="#">Transactions</a>
+						</h4>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+						<div class="features-icons-icon d-flex">
+							<i class="icon-credit-card m-auto text-primary"></i>
+						</div>
+						<h4>
+							<a class="nav-link" href="#">Credit Cards</a>
+						</h4>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+						<div class="features-icons-icon d-flex">
+							<i class="icon-envelope m-auto text-primary"></i>
+						</div>
+						<h4>
+							<a class="nav-link" href="transaction-approval">Bank Transfer</a>
+						</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="features-icons bg-light text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="features-icons-item mx-auto mb-0 mb-lg-3">
+						<div class="features-icons-icon d-flex">
+							<i class="icon-event m-auto text-primary"></i>
+						</div>
+						<h4>
+							<a class="nav-link" href="#">Appointments</a>
+						</h4>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+						<div class="features-icons-icon d-flex">
+							<i class="icon-screen-desktop m-auto text-primary"></i>
+						</div>
+						<h4>
+							<a class="nav-link" th:href="${profilePage}">Profile</a>
+						</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Image Showcases -->
+	<section class="showcase">
+		<div class="container-fluid p-0">
+			<div class="row no-gutters">
+
+				<div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');"></div>
+				<div class="col-lg-6 order-lg-1 my-auto showcase-text">
+					<h2>Mobile App</h2>
+					<p class="lead mb-0">Download the mobile app to manage your account on the go.</p>
+					<a href="#">
+						<img class="img-fluid" style="width: auto; height: 50px;" src="img/get-it-on-google.png" alt="">
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+
+</html>

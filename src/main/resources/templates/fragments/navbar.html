@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<title>EasyBank</title>
+</head>
+
+<div th:fragment="navbar">
+	<nav class="navbar navbar-light sticky-top bg-white shadow-lg p-20 mb-20">
+		<div class="container">
+			<a th:href="@{/home}">
+				<img class="img-fluid" style="width: auto; height: 50px;" src="img/logo-with-name-wide.png" alt="">
+			</a>
+
+			<ul class="navbar-nav d-none d-md-block">
+				<li sec:authorize="!isAuthenticated()" class="nav-item">
+					<a th:href="@{/home}" id="login" class="btn btn-primary btn-margin">Login</a>
+				</li>
+
+				<li sec:authorize="isAuthenticated()" class="nav-item">
+					<a href="" id="profile" data-toggle="modal" data-target="#modalIDTokenClaims">
+						<img th:src="${profile.get('picture')}" alt="Profile picture" class="nav-user-profile rounded-circle" width="50" />
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- ID Token claims -->
+	<div class="modal fade" data-show="true" id="modalIDTokenClaims" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header text-center">
+					<h4 class="modal-title w-100 font-weight-bold">ID Token claims</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<div class="modal-body">
+					<pre class="rounded">
+						<code class="json" id="profileJson" th:text="${profileJson}"></code>
+					</pre>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+</html>
