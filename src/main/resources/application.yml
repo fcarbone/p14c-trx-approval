@@ -1,5 +1,5 @@
 ping-config:
-   server: eu
+   server: <<REPLACE>>
    env-id: <<REPLACE>>
    oidc-client-id: <<REPLACE>>
    oidc-client-secret: <<REPLACE>>

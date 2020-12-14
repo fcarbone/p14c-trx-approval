@@ -54,11 +54,10 @@ public class TransactionApprovalService {
 
 	public AuthenticationResponse initiateTransaction(String userId, Map <String,String> attributes,Map <String,String> context) throws JoseException {
 		String uriTemplate = azUrl
-				+ "?response_type=code&response_mode=pi.flow&client_id={client_id}&redirect_uri={redirect_uri}&acr_values={acr_values}&login_hint_token={login_hint_token}&request={request}";
+				+ "?response_type=code&response_mode=pi.flow&client_id={client_id}&acr_values={acr_values}&login_hint_token={login_hint_token}&request={request}";
 
 		Map<String, String> urlParameters = new HashMap<>();
 		urlParameters.put("client_id",clientId);
-		urlParameters.put("redirect_uri",clientRedirectUri);
 		urlParameters.put("acr_values",trxApprovalPolicy);
 		urlParameters.put("login_hint_token",generateLoginHintToken(userId));
 		urlParameters.put("request",generateRequestParamToken(attributes, context));
